@@ -16,3 +16,15 @@ input {
 input:checked {
   border: 5px solid rgb(29, 127, 240);
 }
+
+button {
+	margin-top: 10px;
+}
+
+#correct {
+	color: #50C878;
+}
+
+#incorrect {
+	color: #F00;
+}
