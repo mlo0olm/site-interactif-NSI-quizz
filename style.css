@@ -5,7 +5,7 @@ input {
   width: 16px;
   height: 16px;
 
-  border: 1px solid #999999;
+  border: 1px solid #999;
   transition: 0.2s all linear;
   margin-right: 10px;
 
@@ -13,12 +13,34 @@ input {
   top: 3px;
 }
 
+input:disabled {
+  transition: 0s;
+  border: 1px solid #bfbfbf;
+}
+
 input:checked {
+  transition: 0s;
   border: 5px solid rgb(29, 127, 240);
 }
 
-button {
-	margin-top: 10px;
+input.incorrect {
+  transition: 0s;
+  border: 5px solid rgb(200, 0, 0);
+}
+
+input.correct {
+  transition: 0s;
+  border: 5px solid rgb(0, 200, 0);
+}
+
+
+.label_disabled{
+	color: #bfbfbf;
+}
+
+
+div#possibilites {
+	margin-bottom: 10px;
 }
 
 #correct {
