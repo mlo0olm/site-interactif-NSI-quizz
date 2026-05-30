@@ -9,46 +9,55 @@
 </head>
 <body>
     <h1>Quizz</h1>
-    <p id="question">hello</p>
-    <fieldset>
-    <legend id="texte_fieldset">Sélectionnez une réponse :</legend>
-    <div>
-        <div id="possibilites">
-            <div>
-                <input type="radio" name="réponse" id="reponse1" value="réponse 1">
-                <label for="reponse1" id="label1">réponse 1</label>
-            </div>
-
-            <div>
-                <input type="radio" name="réponse" id="reponse2" value="réponse 2">
-                <label for="reponse2" id="label2">réponse 2</label>
-            </div>
-
-            <div>
-                <input type="radio" name="réponse" id="reponse3" value="réponse 3">
-                <label for="reponse3" id="label3">réponse 3</label>
-            </div>
+    <div id="frame1">
+        <div id="champ_question">
+            <p id="question">hello</p>
         </div>
-		<p id="correct" hidden>Bonne réponse !</p>
-		<p id="incorrect" hidden>Mauvaise réponse...</p>
-		<p id="choose_element" hidden>Veuillez sélectionner une réponse avant de valider</p>
-        <button id="button_reponse">
-            Valider
-        </button>
-		<button id="button_skip" hidden>
-            Passer
-        </button>
-		<button id="button_next" hidden>
-            Question suivante
-        </button>
+        <fieldset id="texte_fieldset">
+        <legend>Sélectionnez une réponse :</legend>
+        <div>
+            <div id="possibilites">
+                <div>
+                    <input type="radio" name="réponse" id="reponse1" value="réponse 1">
+                    <label for="reponse1">réponse 1</label>
+                </div>
 
-		<div id="end" hidden>
-            <p>Bravo, vous avez terminé le questionnaire !</p>
-            <p id="score"></p>
+                <div>
+                    <input type="radio" name="réponse" id="reponse2" value="réponse 2">
+                    <label for="reponse2">réponse 2</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="réponse" id="reponse3" value="réponse 3">
+                    <label for="reponse3">réponse 3</label>
+                </div>
+            </div>
+
+            <div id="messages">
+                <p id="correct" hidden>Bonne réponse !</p>
+                <p id="incorrect" hidden>Mauvaise réponse...</p>
+                <p id="choose_element" hidden>Veuillez sélectionner une réponse avant de valider</p>
+            </div>
+
+            <button id="button_reponse" type="button">
+                ok
+            </button>
+
+            <button id="button_skip" type="button">
+                Passer
+            </button>
+
+            <button id="button_next" type="button" hidden>
+                Question suivante
+            </button>
         </div>
-
     </div>
     </fieldset>
+
+    <div id="end" hidden>
+        <h2>Quiz terminé !</h2>
+        <p id="score"></p>
+    </div>
 
 </body>
 </html>

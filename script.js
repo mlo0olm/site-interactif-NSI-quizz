@@ -1,6 +1,17 @@
 const list_questions = [
-    ["Quel est la bonne réponse ?", ["A", "B", "C"], "B"], // Questions, [liste de réponses possibles], bonne réponse
-    ["Quel est la meillleure spé ?", ["SES", "HGGSP", "HLP", "NSI", "AMC", "SVT"], "NSI"]
+    ["Quelle est la bonne réponse ?", ["A", "B", "C"], "B"],
+    ["Quelle est la meilleure spécialité ?", ["SES", "HGGSP", "HLP", "NSI", "AMC", "SVT"], "NSI"],
+    ["Quel est le meilleur logiciel de 3D ?", ["Maya", "Blender", "3DS Max", "SketchUp", "Fusion 360", "Cinema 4D", "Houdini"], "Blender"],
+    ["Quel est le meilleur langage de programmation ?", ["C#", "PHP", "Scratch Jr", "Java", "JavaScript", "C++", "Python", "Assembleur"], "Python"],
+    ["Quel langage est le plus utile pour l’avenir de l’IA ?", ["Python", "C++", "Java", "R", "IA pas bien"], "IA pas bien"],
+    ["Quel éditeur de code est le plus puissant ?", ["VS Code", "Sublime Text", "Vim", "PyCharm", "Notepad++", "Bloc-notes"], "Bloc-notes"],
+    ["Quel est le meilleur concepteur de microprocesseurs ?", ["Intel", "AMD", "Motorola", "Apple"], "Motorola"],
+    ["Quel est le pire endroit pour coder ?", ["Sur un PC gamer", "Sur ENIAC", "Sur un Chromebook", "Sur un grille-pain"], "Sur un Chromebook"],
+    ["Quelle est la meilleure méthode de debug ?", ["Mettre des print() partout", "Changer le code au hasard", "Demander à une IA", "Redémarrer l’ordinateur"], "Mettre des print() partout"],
+    ["Que fait un développeur âgé ?", ["Code propre", "Boit du café", "Crée des QCM de NSI", "Regarde des vidéos YouTube"], "Crée des QCM de NSI"],
+    ["Quelle est la meilleure police pour coder ?", ["Comic Sans MS", "Courier New", "Arial", "Papyrus"], "Comic Sans MS"],
+    ["Quel est le meilleur navigateur pour coder ?", ["Chrome", "Firefox", "Edge", "Internet Explorer"], "Internet Explorer"],
+    ["Que faire quand on s’ennuie ?", ["Installer 52 fois une VM de Windows XP", "Apprendre son cours d’histoire", "Jouer à Tetris", "Écrire des questions stupides pour ce quiz"], "Écrire des questions stupides pour ce quiz"]
 ];
 let index_question = -1;
 let score = 0;
@@ -122,5 +133,5 @@ document.addEventListener('DOMContentLoaded', () => {
     newQuestion();
 	document.getElementById("button_reponse").addEventListener("click", clickAnswer);
 	document.getElementById("button_next").addEventListener("click", newQuestion);
-	document.getElementById("button_skip").addEventListener("click", skipQuestion);
+	document.getElementById("button_skip").addEventListener("click", skipQuestion); // pourquoi on le passe pas directement en appelant newQuestion ? 
 })
