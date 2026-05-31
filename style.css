@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background:#f0f2f5;
 }
 
 h1 {
@@ -13,13 +13,21 @@ fieldset {
     margin: auto;
     padding: 10px;
     background-color: white;
-    border: 1px solid #444444;
+    border: 1px #444444 solid;
     border-radius: 18px;
     color: #444444;
-    
+    box-shadow: 0 8px 25px #0000001a;
+}
+legend {
+  color: #444444;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  margin: 16px;
+  border-radius: 8px;
+      border: 1px #444444 solid;
+  font-size: 14px;
 
 }
-
 #question {
     text-align: center;
     font-size: 20px;
@@ -41,8 +49,8 @@ input {
 
     position: relative;
     top: 3px;
-
-    transition: 0.2s all linear;
+    
+    transition: 0.2s all ease-in;
 }
 
 input:checked {
@@ -50,11 +58,13 @@ input:checked {
 }
 
 input.incorrect {
-  border: 5px solid rgb(200, 0, 0);
+  border: 5px solid #ef0000;
+  transform: scale(1.2);
 }
 
 input.correct {
-  border: 5px solid rgb(0, 200, 0);
+  border: 5px solid #00a000;
+  transform: scale(1.2);
 }
 
 button {
@@ -69,8 +79,16 @@ button {
 }
 
 button:hover {
-    background-color: #1565c0;
+    background-color: #1979e6;
+    transform: translateY(-1px);
 }
+
+
+button:active {
+    transform: translateY(1px);
+}
+
+
 p {
     font-size: 14px;
 }
@@ -83,6 +101,18 @@ p {
     border-radius: 8px;
     color: white;
     display: inline-block;
+    animation: apparition 0.3s ease-out;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 [hidden] {
@@ -90,18 +120,18 @@ p {
 }
 
 #correct {
-    background-color: green;
+    background-color: #00a000;
 }
 
 #incorrect {
-    background-color: red;
+    background-color: #ef0000;
 }
 
 #choose_element {
-    background-color: orange;
+    background-color: #ffa500;
 }
 #messages {
-    min-height: 40px;
+    min-height: 45px;
 }
 
 #end {
