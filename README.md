@@ -1,2 +1,2 @@
-# site-interactif-NSI-quizz
-un super site hyper interactif et très bien aussi 
+# Site de Quizz
+Un site internet permettant de répondre à un quizz dans son navigateur. 
