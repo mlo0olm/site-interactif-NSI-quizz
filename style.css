@@ -49,6 +49,14 @@ input:checked {
     border: 5px solid #1d7ff0;
 }
 
+input.incorrect {
+  border: 5px solid rgb(200, 0, 0);
+}
+
+input.correct {
+  border: 5px solid rgb(0, 200, 0);
+}
+
 button {
     margin: 5px;
     padding: 8px 12px;
@@ -80,8 +88,8 @@ p {
 [hidden] {
     display: none !important;
 }
-#correct {
 
+#correct {
     background-color: green;
 }
 

@@ -121,6 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 	function skipQuestion() {
+	    document.querySelectorAll("fieldset input[name='réponse']").forEach((element) => {
+            element.checked = false;
+        });
 		document.getElementById("button_reponse").hidden = true;
 		document.getElementById("button_skip").hidden = true;
 		document.getElementById("button_next").hidden = false;
@@ -133,5 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
     newQuestion();
 	document.getElementById("button_reponse").addEventListener("click", clickAnswer);
 	document.getElementById("button_next").addEventListener("click", newQuestion);
-	document.getElementById("button_skip").addEventListener("click", skipQuestion); // pourquoi on le passe pas directement en appelant newQuestion ? 
+	document.getElementById("button_skip").addEventListener("click", skipQuestion); // Affiche la solution correcte sans regarder l'entrée de l'utilisateur
 })
