@@ -154,16 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function getSettings() {
-		name = document.getElementById("name");
-		nb_questions = document.getElementById("number");
+		name = document.getElementById("name").value;
+		nb_questions = document.getElementById("number").value;
 		document.getElementById("start").hidden = true;
 		document.getElementById("frame1").hidden = false;
+		newQuestion();
 	}
 
 	/*document.getElementById("correct").hidden = true;
 	document.getElementById("incorrect").hidden = true;*/
-
-    newQuestion();
+	document.getElementById("frame1").hidden = true;
+	document.getElementById("Validation").addEventListener("click", getSettings);
 	document.getElementById("button_reponse").addEventListener("click", clickAnswer);
 	document.getElementById("button_next").addEventListener("click", newQuestion);
 	document.getElementById("button_skip").addEventListener("click", skipQuestion); // Affiche la solution correcte sans regarder l'entrée de l'utilisateur
