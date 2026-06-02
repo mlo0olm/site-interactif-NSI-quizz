@@ -21,6 +21,27 @@ const list_questions = [
 let index_question = -1;
 let score = 0;
 
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+shuffle(list_questions)
+list_questions.forEach(element => {
+	shuffle(element[1])
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 	function end() {
 		document.getElementById("question").hidden = true;
@@ -33,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("end").hidden = false;
 
 		document.getElementById("texte_fieldset").hidden = true;
-		document.getElementById("score").innerText = "Score : " + (score/list_questions.length)*100 + "%";
+		document.getElementById("score").innerText = "Score : " + Math.round((score/list_questions.length)*100) + "%";
 	}
 
 
@@ -53,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			end();
 		} else {
 			document.getElementById("question").innerText = list_questions[index_question][0];
-
+			
 			index = 0;
 			list_questions[index_question][1].forEach(
 				(element) => {
