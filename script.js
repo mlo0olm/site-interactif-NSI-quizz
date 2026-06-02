@@ -1,5 +1,5 @@
 const list_questions = [
-	['Es ce que le prix des iPhones sont justifier',["oui",'non','peutêtre'],'non'],
+	["Es ce que le prix des iPhones sont justifier",["oui",'non','peutêtre'],'non'],
     ["Quelle est la meilleure spécialité ?", ["SES", "HGGSP", "HLP", "NSI", "AMC", "SVT"], "NSI"],
     ["Quel est le meilleur logiciel de 3D ?", ["Maya", "Blender", "3DS Max", "SketchUp", "Fusion 360", "Cinema 4D", "Houdini"], "Blender"],
     ["Quel est le meilleur langage de programmation ?", ["C#", "PHP", "Scratch Jr", "Java", "JavaScript", "C++", "Python", "Assembleur"], "Python"],
@@ -23,15 +23,9 @@ let score = 0;
 
 function shuffle(array) {
   let currentIndex = array.length;
-
-  // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
-    // Pick a remaining element...
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
