@@ -20,6 +20,8 @@ const list_questions = [
 ];
 let index_question = -1;
 let score = 0;
+let name = "";
+let nb_questions = 0;
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("end").hidden = false;
 
 		document.getElementById("texte_fieldset").hidden = true;
-		document.getElementById("score").innerText = "Score : " + Math.round((score/list_questions.length)*100) + "%";
+		document.getElementById("score").innerText = "Score : " + Math.round((score/nb_questions)*100) + "%";
 	}
 
 
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         index_question ++;
 
-		if (index_question >= list_questions.length) {
+		if (index_question >= nb_questions) {
 			end();
 		} else {
 			document.getElementById("question").innerText = list_questions[index_question][0];
@@ -149,6 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("button_next").hidden = false;
 		document.getElementById("choose_element").hidden = true;
 		disableAll();
+	}
+
+	function getSettings() {
+		name = document.getElementById("name");
+		nb_questions = document.getElementById("number");
+		document.getElementById("start").hidden = true;
+		document.getElementById("frame1").hidden = false;
 	}
 
 	/*document.getElementById("correct").hidden = true;
