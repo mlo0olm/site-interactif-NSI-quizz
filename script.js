@@ -163,11 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function getSettings() {
-		name = document.getElementById("name").value;
-		nb_questions = document.getElementById("number").value;
-		document.getElementById("start").hidden = true;
-		document.getElementById("frame1").hidden = false;
-		newQuestion();
+		if (document.getElementById("number").validity.valid && document.getElementById("number").value != "") {
+			name = document.getElementById("name").value;
+			nb_questions = document.getElementById("number").value;
+			document.getElementById("start").hidden = true;
+			document.getElementById("frame1").hidden = false;
+			newQuestion();
+		}
 	}
 
 	/*document.getElementById("correct").hidden = true;
