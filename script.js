@@ -50,8 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("end").hidden = false;
 
 		document.getElementById("texte_fieldset").hidden = true;
-		document.getElementById("paragraphe_name").innerText = "Bravo "+name;
-		document.getElementById("score").innerText = "Score : " + Math.round((score/nb_questions)*100) + "%";
+		let score_percent = Math.round((score/nb_questions)*100);
+		if (score_percent > 50) {
+			document.getElementById("paragraphe_name").innerText = "Bravo " + name;
+		} else if (score_percent > 20) {
+			document.getElementById("paragraphe_name").innerText = "Allez " + name + ", tu peux mieux faire";
+		} else {
+			document.getElementById("paragraphe_name").innerText = "Retourne apprendre tes cours, " + name;
+		}
+
+		document.getElementById("score").innerText = "Score : " + score_percent + "%";
 	}
 
 
