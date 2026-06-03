@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     tbody_classement.innerHTML = "";
 
     let sauvegarde = JSON.parse(window.localStorage.getItem("results"));
+
+    let liste_sauvegarde = [];
+    for (v in Object.keys(sauvegarde)) {
+        liste_sauvegarde.push([sauvegarde[Object.keys(sauvegarde)[v]], Object.keys(sauvegarde)[v]]);
+    }
+    liste_sauvegarde.sort().reverse();
+    console.log(liste_sauvegarde);
+
 	if (sauvegarde == null) {
 		console.log("no sauvegarde");
 		let paragraphe = document.createElement("p");
@@ -10,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("classement").appendChild(paragraphe);
 		tbody_classement.remove();
 	} else {
-	    let i = 1;
-        for (participant in sauvegarde) {
+        for (let i = 1; i <= liste_sauvegarde.length; i++) {
+            let participant = liste_sauvegarde[i-1][1]
+            let score = liste_sauvegarde[i-1][0]
+
             let tr = document.createElement("tr");
 
             let td_num = document.createElement("td");
@@ -23,22 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tr.appendChild(td_nom);
 
             let td_pourcent = document.createElement("td");
-            td_pourcent.innerText = sauvegarde[participant]+"%";
+            td_pourcent.innerText = score+"%";
             tr.appendChild(td_pourcent);
 
             let td_progress = document.createElement("td");
             let progress = document.createElement("progress");
             progress.max = "100";
             console.log(participant);
-            console.log(sauvegarde[participant]);
-            progress.value = sauvegarde[participant];
-            progress.innerText = sauvegarde[participant]+"%";
+            console.log(score);
+            progress.value = score;
+            progress.innerText = score+"%";
             td_progress.appendChild(progress);
             tr.appendChild(td_progress);
 
             tbody_classement.appendChild(tr);
 
-            i ++;
         }
 	}
 })
