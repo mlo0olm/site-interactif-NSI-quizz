@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("end").hidden = false;
 
 		document.getElementById("texte_fieldset").hidden = true;
+		document.getElementById("paragraphe_name").innerText = "Bravo "+name;
 		document.getElementById("score").innerText = "Score : " + Math.round((score/nb_questions)*100) + "%";
 	}
 
