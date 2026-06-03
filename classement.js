@@ -6,9 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (sauvegarde == null) {
 		console.log("no sauvegarde");
-		let paragraphe = document.createElement("p");
-		paragraphe.innerText = "Aucun résultat enregistré";
-		document.getElementById("classement").appendChild(paragraphe);
+		document.getElementById("no_save").hidden = false;
 		tbody_classement.remove();
 	} else {
 	    let liste_sauvegarde = [];
