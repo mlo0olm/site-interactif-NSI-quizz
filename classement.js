@@ -4,13 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let sauvegarde = JSON.parse(window.localStorage.getItem("results"));
 
-    let liste_sauvegarde = [];
-    for (v in Object.keys(sauvegarde)) {
-        liste_sauvegarde.push([sauvegarde[Object.keys(sauvegarde)[v]], Object.keys(sauvegarde)[v]]);
-    }
-    liste_sauvegarde.sort(compareFn=(a, b) => a[0] + b[0]);
-    console.log(liste_sauvegarde);
-
 	if (sauvegarde == null) {
 		console.log("no sauvegarde");
 		let paragraphe = document.createElement("p");
@@ -18,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.getElementById("classement").appendChild(paragraphe);
 		tbody_classement.remove();
 	} else {
+	    let liste_sauvegarde = [];
+        for (v in Object.keys(sauvegarde)) {
+            liste_sauvegarde.push([sauvegarde[Object.keys(sauvegarde)[v]], Object.keys(sauvegarde)[v]]);
+        }
+        liste_sauvegarde.sort(compareFn=(a, b) => a[0] + b[0]);
+        console.log(liste_sauvegarde);
+
         for (let i = 1; i <= liste_sauvegarde.length; i++) {
             let participant = liste_sauvegarde[i-1][1]
             let score = liste_sauvegarde[i-1][0]
