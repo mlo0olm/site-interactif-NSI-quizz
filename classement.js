@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (v in Object.keys(sauvegarde)) {
         liste_sauvegarde.push([sauvegarde[Object.keys(sauvegarde)[v]], Object.keys(sauvegarde)[v]]);
     }
-    liste_sauvegarde.sort().reverse();
+    liste_sauvegarde.sort(compareFn=(a, b) => a[0] + b[0]);
     console.log(liste_sauvegarde);
 
 	if (sauvegarde == null) {

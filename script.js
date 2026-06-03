@@ -14,7 +14,7 @@ const list_questions = [
     ["Que faire quand on s’ennuie ?", ["Installer 52 fois une VM de Windows XP", "Apprendre son cours d’histoire", "Jouer à Tetris", "Écrire des questions stupides pour ce quiz"], "Écrire des questions stupides pour ce quiz"],
 	["Quelle est la meilleur version de Windows ?",["Windows 11","Windows Vista","Windows 12","Windows XP","Windows 95","Windows 8"],"Windows XP"],
 	["Quelle est la pire entreprise de développement logiciel ?",["Adobe", "Microsoft", "Mozilla", "Casio"], "Adobe"],
-	["Quel est le meilleur outils pour faire du Python ?",["La calculatrice CASIO","Les PC de NSI","Un Chromebook","Un ordinateur quantique"],"La calculatrice CASIO"],
+	["Quel est le meilleur outil pour faire du Python ?",["La calculatrice CASIO","Les PC de NSI","Un Chromebook","Un ordinateur quantique"],"La calculatrice CASIO"],
 	["Si tu as besoin d'un nouveau PC lequel choisis tu :",["un HP", "64 raspberry Pi", "un Macbook Pro"],"64 raspberry Pi"],
 	["S'il fait 45 °C et que tu as un ventilateur, que fais tu ?",["Je me ventile pour pas crever","Je refroidis mon PC car il passe avant moi"],"Je refroidis mon PC car il passe avant moi"]
 ];
