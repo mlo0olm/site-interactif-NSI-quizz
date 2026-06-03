@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		document.getElementById("score").innerText = "Score : " + score_percent + "%";
 
-		sauvegarde[name.toString()] = score_percent;
-		console.log(name.toString(), score_percent, sauvegarde);
-		console.log(JSON.stringify(sauvegarde));
+		sauvegarde[name.toString()] = parseInt(score_percent);
+		// console.log(name.toString(), parseInt(score_percent), sauvegarde);
+		// console.log(JSON.stringify(sauvegarde));
 		// window.localStorage.removeItem("results");
 		window.localStorage.setItem("results", JSON.stringify(sauvegarde));
 	}
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	let sauvegarde = window.localStorage.getItem("results");
+	let sauvegarde = JSON.parse(window.localStorage.getItem("results"));
 	if (sauvegarde == null) {
 		console.log("no sauvegarde");
 		sauvegarde = {};
