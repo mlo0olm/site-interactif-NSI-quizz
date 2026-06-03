@@ -1,22 +1,22 @@
 const list_questions = [
-	["Es ce que le prix des iPhones sont justifier",["oui",'non','peutêtre'],'non'],
+	["Est-ce que le prix des iPhones est justifié ?",["Oui",'Non','Peut-être'],'Non'],
     ["Quelle est la meilleure spécialité ?", ["SES", "HGGSP", "HLP", "NSI", "AMC", "SVT"], "NSI"],
     ["Quel est le meilleur logiciel de 3D ?", ["Maya", "Blender", "3DS Max", "SketchUp", "Fusion 360", "Cinema 4D", "Houdini"], "Blender"],
     ["Quel est le meilleur langage de programmation ?", ["C#", "PHP", "Scratch Jr", "Java", "JavaScript", "C++", "Python", "Assembleur"], "Python"],
     ["Quel langage est le plus utile pour l’avenir de l’IA ?", ["Python", "C++", "Java", "R", "IA pas bien"], "IA pas bien"],
     ["Quel éditeur de code est le plus puissant ?", ["VS Code", "Sublime Text", "Vim", "PyCharm", "Notepad++", "Bloc-notes"], "Bloc-notes"],
     ["Quel est le meilleur concepteur de microprocesseurs ?", ["Intel", "AMD", "Motorola", "Apple"], "Motorola"],
-    ["Quel est le pire endroit pour coder ?", ["Sur un PC gamer", "Sur ENIAC", "Sur un Chromebook", "Sur un grille-pain"], "Sur un Chromebook"],
+    ["Quel est le pire endroit pour coder ?", ["Sur un PC gamer", "Sur l'ENIAC", "Sur un Chromebook", "Sur un grille-pain"], "Sur un Chromebook"],
     ["Quelle est la meilleure méthode de debug ?", ["Mettre des print() partout", "Changer le code au hasard", "Demander à une IA", "Redémarrer l’ordinateur"], "Mettre des print() partout"],
-    ["Que fait un développeur âgé ?", ["Code propre", "Boit du café", "Crée des QCM de NSI", "Regarde des vidéos YouTube"], "Crée des QCM de NSI"],
+    ["Que fait un développeur âgé ?", ["Code propre", "Boit du café", "Créer des QCM de NSI", "Regarde des vidéos YouTube"], "Crée des QCM de NSI"],
     ["Quelle est la meilleure police pour coder ?", ["Comic Sans MS", "Courier New", "Arial", "Papyrus"], "Comic Sans MS"],
     ["Quel est le meilleur navigateur pour coder ?", ["Chrome", "Firefox", "Edge", "Internet Explorer"], "Internet Explorer"],
     ["Que faire quand on s’ennuie ?", ["Installer 52 fois une VM de Windows XP", "Apprendre son cours d’histoire", "Jouer à Tetris", "Écrire des questions stupides pour ce quiz"], "Écrire des questions stupides pour ce quiz"],
-	["Quelle est la meilleur vertions de Windows",["Windows 11","Windows Vista","Windows 12","Windows XP","Windows 95","Windows 8"],"Windows XP"],
-	["Quelle est la pire entrepise de dévlopement logiciel",["Adobe", "Microsoft", "Mozila", "Casio"], "Adobe"],
-	["Quel est le meilleur outis pour faire un pyhton",["La caluclatrice CASIO","les PC de NSI","un Chromebook","un odrinateur quantique"],"La caluclatrice CASIO"],
-	["Si tu as besion d'un nouveau PC lequel choisis tu :",["un HP", "64 raspberry Pi", "un Macbook Pro"],"64 raspberry Pi"],
-	["Si fait 45 °C et tu as un ventilteur, que fais tu ?",["je me ventile pour pas crevée","je refroidis mon PC car il passe avant moi"],"je refroidis mon PC car il passe avant moi"]
+	["Quelle est la meilleur version de Windows ?",["Windows 11","Windows Vista","Windows 12","Windows XP","Windows 95","Windows 8"],"Windows XP"],
+	["Quelle est la pire entreprise de développement logiciel ?",["Adobe", "Microsoft", "Mozilla", "Casio"], "Adobe"],
+	["Quel est le meilleur outils pour faire du Python ?",["La calculatrice CASIO","Les PC de NSI","Un Chromebook","Un ordinateur quantique"],"La calculatrice CASIO"],
+	["Si tu as besoin d'un nouveau PC lequel choisis tu :",["un HP", "64 raspberry Pi", "un Macbook Pro"],"64 raspberry Pi"],
+	["S'il fait 45 °C et que tu as un ventilateur, que fais tu ?",["Je me ventile pour pas crever","Je refroidis mon PC car il passe avant moi"],"Je refroidis mon PC car il passe avant moi"]
 ];
 let index_question = -1;
 let score = 0;
@@ -60,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		document.getElementById("score").innerText = "Score : " + score_percent + "%";
+
+		sauvegarde[name.toString()] = parseInt(score_percent);
+		// console.log(name.toString(), parseInt(score_percent), sauvegarde);
+		// console.log(JSON.stringify(sauvegarde));
+		// window.localStorage.removeItem("results");
+		window.localStorage.setItem("results", JSON.stringify(sauvegarde));
 	}
 
 
@@ -175,6 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.getElementById("frame1").hidden = false;
 			newQuestion();
 		}
+	}
+
+	let sauvegarde = JSON.parse(window.localStorage.getItem("results"));
+	if (sauvegarde == null) {
+		console.log("no sauvegarde");
+		sauvegarde = {};
 	}
 
 	/*document.getElementById("correct").hidden = true;
