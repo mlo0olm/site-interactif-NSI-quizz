@@ -81,7 +81,12 @@ button:hover {
     transform: translateY(-1px);
 }
 
+input:invalid{
+    border: 1px solid #df0000;
+}
+button:valide{
 
+}
 button:active {
     transform: translateY(1px);
 }
@@ -163,3 +168,4 @@ p {
     color: #444444;
     font-weight: bold;
 }
+
