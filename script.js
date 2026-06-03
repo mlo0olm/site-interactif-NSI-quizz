@@ -8,7 +8,7 @@ const list_questions = [
     ["Quel est le meilleur concepteur de microprocesseurs ?", ["Intel", "AMD", "Motorola", "Apple"], "Motorola"],
     ["Quel est le pire endroit pour coder ?", ["Sur un PC gamer", "Sur l'ENIAC", "Sur un Chromebook", "Sur un grille-pain"], "Sur un Chromebook"],
     ["Quelle est la meilleure méthode de debug ?", ["Mettre des print() partout", "Changer le code au hasard", "Demander à une IA", "Redémarrer l’ordinateur"], "Mettre des print() partout"],
-    ["Que fait un développeur âgé ?", ["Code propre", "Boit du café", "Créer des QCM de NSI", "Regarde des vidéos YouTube"], "Crée des QCM de NSI"],
+    ["Que fait un développeur âgé ?", ["Code propre", "Boit du café", "Créer des QCM de NSI", "Regarde des vidéos YouTube"], "Créer des QCM de NSI"],
     ["Quelle est la meilleure police pour coder ?", ["Comic Sans MS", "Courier New", "Arial", "Papyrus"], "Comic Sans MS"],
     ["Quel est le meilleur navigateur pour coder ?", ["Chrome", "Firefox", "Edge", "Internet Explorer"], "Internet Explorer"],
     ["Que faire quand on s’ennuie ?", ["Installer 52 fois une VM de Windows XP", "Apprendre son cours d’histoire", "Jouer à Tetris", "Écrire des questions stupides pour ce quiz"], "Écrire des questions stupides pour ce quiz"],
